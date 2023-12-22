@@ -695,6 +695,11 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
+"@nestjs/cache-manager@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/@nestjs/cache-manager/-/cache-manager-2.1.1.tgz"
+  integrity sha512-oYfRys4Ng0zp2HTUPNjH7gizf4vvG3PQZZ+3yGemb3xrF+p3JxDSK0cDq9NTjHzD5UmhjiyAftB9GkuL+t3r9g==
+
 "@nestjs/cli@^10.0.0":
   version "10.2.1"
   resolved "https://registry.npmjs.org/@nestjs/cli/-/cli-10.2.1.tgz"
@@ -724,7 +729,7 @@
     webpack "5.89.0"
     webpack-node-externals "3.0.0"
 
-"@nestjs/common@^10.0.0", "@nestjs/common@^8.0.0 || ^9.0.0 || ^10.0.0":
+"@nestjs/common@^10.0.0", "@nestjs/common@^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/common@^9.0.0 || ^10.0.0":
   version "10.2.10"
   resolved "https://registry.npmjs.org/@nestjs/common/-/common-10.2.10.tgz"
   integrity sha512-fwAk931rjW8CNH2Mgwawq/7HWHH1dxkOLdcgs7U52ddLk8CtHXjejm1cbNahewlSbNhvlOl7y1STLHutE6sUqw==
@@ -743,7 +748,7 @@
     lodash "4.17.21"
     uuid "9.0.0"
 
-"@nestjs/core@^10.0.0", "@nestjs/core@^8.0.0 || ^9.0.0 || ^10.0.0":
+"@nestjs/core@^10.0.0", "@nestjs/core@^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/core@^9.0.0 || ^10.0.0":
   version "10.2.10"
   resolved "https://registry.npmjs.org/@nestjs/core/-/core-10.2.10.tgz"
   integrity sha512-+ckOI6BPi2ZMHikT9MCG4ctHDc4OnjhoIytrn7f2AYMMXI4bnutJhqyQKc30VDka5x3Wq6QAD57pgSP7y+JjJg==
@@ -850,6 +855,40 @@
     open "^9.1.0"
     picocolors "^1.0.0"
     tslib "^2.6.0"
+
+"@redis/bloom@^1.2.0", "@redis/bloom@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/@redis/bloom/-/bloom-1.2.0.tgz"
+  integrity sha512-HG2DFjYKbpNmVXsa0keLHp/3leGJz1mjh09f2RLGGLQZzSHpkmZWuwJbAvo3QcRY8p80m5+ZdXZdYOSBLlp7Cg==
+
+"@redis/client@^1.0.0", "@redis/client@^1.5.8", "@redis/client@1.5.13":
+  version "1.5.13"
+  resolved "https://registry.npmjs.org/@redis/client/-/client-1.5.13.tgz"
+  integrity sha512-epkUM9D0Sdmt93/8Ozk43PNjLi36RZzG+d/T1Gdu5AI8jvghonTeLYV69WVWdilvFo+PYxbP0TZ0saMvr6nscQ==
+  dependencies:
+    cluster-key-slot "1.1.2"
+    generic-pool "3.9.0"
+    yallist "4.0.0"
+
+"@redis/graph@^1.1.0", "@redis/graph@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@redis/graph/-/graph-1.1.1.tgz"
+  integrity sha512-FEMTcTHZozZciLRl6GiiIB4zGm5z5F3F6a6FZCyrfxdKOhFlGkiAqlexWMBzCi4DcRoyiOsuLfW+cjlGWyExOw==
+
+"@redis/json@^1.0.4", "@redis/json@1.0.6":
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/@redis/json/-/json-1.0.6.tgz"
+  integrity sha512-rcZO3bfQbm2zPRpqo82XbW8zg4G/w4W3tI7X8Mqleq9goQjAGLL7q/1n1ZX4dXEAmORVZ4s1+uKLaUOg7LrUhw==
+
+"@redis/search@^1.1.3", "@redis/search@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.npmjs.org/@redis/search/-/search-1.1.6.tgz"
+  integrity sha512-mZXCxbTYKBQ3M2lZnEddwEAks0Kc7nauire8q20oA0oA/LoA+E/b5Y5KZn232ztPb1FkIGqo12vh3Lf+Vw5iTw==
+
+"@redis/time-series@^1.0.4", "@redis/time-series@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/@redis/time-series/-/time-series-1.0.5.tgz"
+  integrity sha512-IFjIgTusQym2B5IZJG3XKr5llka7ey84fw/NOYqESP5WUfQs9zz1ww/9+qoz4ka/S6KcGBodzlCeZ5UImKbscg==
 
 "@sinclair/typebox@^0.27.8":
   version "0.27.8"
@@ -1781,6 +1820,29 @@ bytes@3.1.2:
   resolved "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
 
+cache-manager-redis-yet@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.npmjs.org/cache-manager-redis-yet/-/cache-manager-redis-yet-4.1.2.tgz"
+  integrity sha512-pM2K1ZlOv8gQpE1Z5mcDrfLj5CsNKVRiYua/SZ12j7LEDgfDeFVntI6JSgIw0siFSR/9P/FpG30scI3frHwibA==
+  dependencies:
+    "@redis/bloom" "^1.2.0"
+    "@redis/client" "^1.5.8"
+    "@redis/graph" "^1.1.0"
+    "@redis/json" "^1.0.4"
+    "@redis/search" "^1.1.3"
+    "@redis/time-series" "^1.0.4"
+    cache-manager "^5.2.2"
+    redis "^4.6.7"
+
+cache-manager@^5.2.2, cache-manager@^5.3.2, cache-manager@<=5:
+  version "5.3.2"
+  resolved "https://registry.npmjs.org/cache-manager/-/cache-manager-5.3.2.tgz"
+  integrity sha512-MBpwYqCqf8LFSso5CjMs5Kj2i3RYYUP0fLwjMSnxyspYx0y8uT1SZbWiOk33fw5r+Sbpe5ERfk1+pgXEJ/omEw==
+  dependencies:
+    lodash.clonedeep "^4.5.0"
+    lru-cache "^10.1.0"
+    promise-coalesce "^1.1.2"
+
 call-bind@^1.0.0:
   version "1.0.5"
   resolved "https://registry.npmjs.org/call-bind/-/call-bind-1.0.5.tgz"
@@ -1932,6 +1994,11 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.npmjs.org/clone/-/clone-1.0.4.tgz"
   integrity sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==
+
+cluster-key-slot@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/cluster-key-slot/-/cluster-key-slot-1.1.2.tgz"
+  integrity sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==
 
 co@^4.6.0:
   version "4.6.0"
@@ -2805,6 +2872,11 @@ gauge@^3.0.0:
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
     wide-align "^1.1.2"
+
+generic-pool@3.9.0:
+  version "3.9.0"
+  resolved "https://registry.npmjs.org/generic-pool/-/generic-pool-3.9.0.tgz"
+  integrity sha512-hymDOu5B53XvN4QT9dBmZxPX4CWhBPPLguTZ9MMFeFa/Kg0xWVfylOVNlJji/E7yTZWFd/q9GO5TxDLq156D7g==
 
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
@@ -3833,6 +3905,11 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz"
+  integrity sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==
+
 lodash.includes@^4.3.0:
   version "4.3.0"
   resolved "https://registry.npmjs.org/lodash.includes/-/lodash.includes-4.3.0.tgz"
@@ -3890,6 +3967,11 @@ log-symbols@^4.1.0:
   dependencies:
     chalk "^4.1.0"
     is-unicode-supported "^0.1.0"
+
+lru-cache@^10.1.0:
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-10.1.0.tgz"
+  integrity sha512-/1clY/ui8CzjKFyjdvwPWJUYKiFVXG2I2cY0ssG7h4+hwk+XOIX7ZSG9Q7TW8TW3Kp3BUSqgFWBLgL4PJ+Blag==
 
 lru-cache@^5.1.1:
   version "5.1.1"
@@ -4578,6 +4660,11 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
+promise-coalesce@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/promise-coalesce/-/promise-coalesce-1.1.2.tgz"
+  integrity sha512-zLaJ9b8hnC564fnJH6NFSOGZYYdzrAJn2JUUIwzoQb32fG2QAakpDNM+CZo1km6keXkRXRM+hml1BFAPVnPkxg==
+
 prompts@^2.0.1:
   version "2.4.2"
   resolved "https://registry.npmjs.org/prompts/-/prompts-2.4.2.tgz"
@@ -4713,6 +4800,18 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
+"redis@^3.1.1 || ^4.0.0", redis@^4.6.7:
+  version "4.6.12"
+  resolved "https://registry.npmjs.org/redis/-/redis-4.6.12.tgz"
+  integrity sha512-41Xuuko6P4uH4VPe5nE3BqXHB7a9lkFL0J29AlxKaIfD6eWO8VO/5PDF9ad2oS+mswMsfFxaM5DlE3tnXT+P8Q==
+  dependencies:
+    "@redis/bloom" "1.2.0"
+    "@redis/client" "1.5.13"
+    "@redis/graph" "1.1.1"
+    "@redis/json" "1.0.6"
+    "@redis/search" "1.1.6"
+    "@redis/time-series" "1.0.5"
+
 reflect-metadata@^0.1.12, reflect-metadata@^0.1.13:
   version "0.1.14"
   resolved "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.14.tgz"
@@ -4815,7 +4914,7 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rxjs@^7.1.0, rxjs@^7.2.0, rxjs@^7.5.5, rxjs@^7.8.1, rxjs@7.8.1:
+rxjs@^7.0.0, rxjs@^7.1.0, rxjs@^7.2.0, rxjs@^7.5.5, rxjs@^7.8.1, rxjs@7.8.1:
   version "7.8.1"
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.8.1.tgz"
   integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
@@ -5692,7 +5791,7 @@ yallist@^3.0.2:
   resolved "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz"
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
 
-yallist@^4.0.0:
+yallist@^4.0.0, yallist@4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==

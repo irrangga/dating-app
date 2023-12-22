@@ -6,7 +6,7 @@ export class CompleteProfileDto {
   lastName: string;
   dateOfBirth: Date;
   gender: ProfileGender;
-  isLikedBy: string[];
+  likedByProfileIds: string[];
   phoneNumber: string;
   password: string;
 }

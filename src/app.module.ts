@@ -6,6 +6,9 @@ import { Profile } from './profiles/entities/profile.entity';
 import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth/auth.guard';
+import { CacheModule } from '@nestjs/cache-manager';
+import { redisStore } from 'cache-manager-redis-yet';
+
 
 @Module({
   imports: [
@@ -21,6 +24,13 @@ import { AuthGuard } from './auth/auth.guard';
       autoLoadEntities: true,
       synchronize: true
     }),
+    CacheModule.register(
+      {
+        store: redisStore,
+        host: process.env.REDIS_HOST,
+        port: process.env.REDIS_PORT,
+        isGlobal: true
+      }),
     ProfilesModule,
     AuthModule
   ],

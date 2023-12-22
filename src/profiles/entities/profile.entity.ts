@@ -17,8 +17,8 @@ export class Profile {
   @Column({ nullable: true })
   gender: string;
 
-  @Column("varchar", { name: "is_liked_by", default: [], array: true })
-  isLikedBy: string[];
+  @Column("varchar", { name: "liked_by_profile_ids", default: [], array: true })
+  likedByProfileIds: string[];
 
   @Column({ name: "phone_number", unique: true })
   phoneNumber: string;
