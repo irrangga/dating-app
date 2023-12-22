@@ -1,8 +1,8 @@
-import { Body, Controller, Get, Post, Put, Req, Request } from '@nestjs/common';
+import { Body, Controller, Get, Post, Put, Req } from '@nestjs/common';
 import { ProfilesService } from './profiles.service';
 import { Profile } from './entities/profile.entity';
 import { CompleteProfileDto } from './dto/complete-profile.dto';
-import { Public } from 'src/common/public-endpoint';
+import { Public } from '../common/public-endpoint';
 import { SwipeProfileDto } from './dto/swipe-profile.dto';
 
 
