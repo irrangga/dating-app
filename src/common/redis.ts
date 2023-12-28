@@ -4,8 +4,11 @@ export const enum RedisKey {
 }
 
 export function calculateRedisTtl() {
+  const redisExpirationTime = process.env.REDIS_EXPIRATION_TIME || "24:00:00"
+  const exp = redisExpirationTime.split(":")
+
   const now = new Date()
-  const expirationTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 24, 0, 0)
+  const expirationTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(exp[0]), parseInt(exp[1]), parseInt(exp[2]))
   if (expirationTime.getTime() < now.getTime()) {
     expirationTime.setDate(expirationTime.getDate() + 1)
   }
