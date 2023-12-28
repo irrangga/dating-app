@@ -25,4 +25,9 @@ export class ProfilesController {
   async swipeProfile(@Body() input: SwipeProfileDto, @Req() request: any): Promise<Profile> {
     return this.profilesService.swipeProfile(input, request.actor)
   }
+
+  @Put('premium')
+  async upgradePremium(@Req() request: any): Promise<Profile> {
+    return this.profilesService.updateProfileIsPremium(request.actor.id)
+  }
 }

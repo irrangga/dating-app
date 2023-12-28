@@ -72,6 +72,7 @@ export class ProfilesService {
   // 3. calculate count of swipe per day
   //    and update ttl to expiration_time (currently set to the end of day 00:00:00)
   async swipeProfile(input: SwipeProfileDto, actor: ActorDto): Promise<any> {
+    const userProfile = await this.getProfileById(actor.id)
     const swipedProfile = await this.getProfileById(input.id)
 
     if (input.swipe === ProfileSwipe.RIGHT && !(swipedProfile.likedByProfileIds.includes(actor.id))) {
@@ -83,7 +84,7 @@ export class ProfilesService {
     }
 
     const swipeCount: number = await this.cacheManager.get(`${actor.id}:${RedisKey.SWIPE_COUNT}`) || 0
-    if (swipeCount >= 10) {
+    if (swipeCount >= 10 && !userProfile.isPremium) {
       throw new BadRequestException("Swipe quota per day has reached maximum. Update to premium to continue swiping.");
     }
     await this.cacheManager.set(`${actor.id}:${RedisKey.SWIPE_COUNT}`, swipeCount + 1, calculateRedisTtl())
@@ -100,5 +101,20 @@ export class ProfilesService {
   async updateProfile(profile: Profile, input: CompleteProfileDto): Promise<Profile> {
     await this.profilesRepository.update(profile.id, input)
     return await this.getProfileById(profile.id)
+  }
+
+  async updateProfileIsPremium(actorId: string): Promise<any> {
+    let profile = await this.getProfileById(actorId)
+
+    const profileDto = new CompleteProfileDto
+    profileDto.isPremium = true
+
+    await this.updateProfile(profile, profileDto)
+    profile = await this.getProfileById(actorId)
+
+    console.log(profile)
+
+    const { password, likedByProfileIds, ...result } = profile
+    return result
   }
 }

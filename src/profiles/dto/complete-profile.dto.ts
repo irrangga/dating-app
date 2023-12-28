@@ -9,4 +9,5 @@ export class CompleteProfileDto {
   likedByProfileIds: string[];
   phoneNumber: string;
   password: string;
+  isPremium: boolean;
 }

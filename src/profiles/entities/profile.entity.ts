@@ -25,4 +25,7 @@ export class Profile {
 
   @Column()
   password: string;
+
+  @Column({ default: false })
+  isPremium: boolean;
 }

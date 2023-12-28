@@ -102,4 +102,21 @@ describe('ProfilesService', () => {
       expect(result).toEqual(resultProfile2)
     });
   })
+
+  describe('upgradePremium', () => {
+    it("should return profile with is_premium is true", async () => {
+      const profile: Partial<Profile> = {
+        id: "1",
+        isPremium: false,
+      }
+
+      jest.spyOn(mockProfileRepository, "update").mockReturnValue(profile)
+
+      profile.isPremium = true
+      jest.spyOn(mockProfileRepository, "findOneBy").mockReturnValue(profile)
+
+      const result = await service.updateProfileIsPremium(profile.id)
+      expect(result.isPremium).toEqual(true)
+    });
+  })
 });
